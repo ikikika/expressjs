@@ -3,6 +3,8 @@ const User = require("../models/User");
 
 const router = express.Router();
 
+const auth = require("../middleware/auth");
+
 router.post("/users", async (req, res) => {
   // Create a new user
   try {
@@ -31,5 +33,10 @@ router.post("/users/login", async (req, res) => {
     res.status(400).send(error);
   }
 });
+
+router.get('/users/me', auth, async (req, res) => {
+  // View logged in user profile
+  res.send(req.user)
+})
 
 module.exports = router;
