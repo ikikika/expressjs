@@ -31,5 +31,5 @@ mongoose.connect(
   }
 );
 
-// How to start listening/boot up the server?
+// How to start listening/boot up the server? npm run start
 app.listen(3000);
