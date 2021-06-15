@@ -18,6 +18,10 @@ const itemSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    completed_date: {
+      type: Date,
+      default: null,
+    },
   },
   {
     timestamps: true,
