@@ -1,15 +1,7 @@
-// const testController = require("../../controllers/testController");
+import { createItem } from "../../controllers/itemController";
 
-import { testFunction } from "../../controllers/testController";
-
-// describe("testController.testFunction", () => {
-//   it("should have a todo function", () => {
-//     expect(typeof testController.testFunction).toBe("function");
-//   });
-// });
-
-describe("testFunction", () => {
+describe("createItem", () => {
   it("should have a todo function", () => {
-    expect(typeof testFunction).toBe("function");
+    expect(typeof createItem).toBe("function");
   });
 });

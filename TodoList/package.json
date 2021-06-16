@@ -9,7 +9,7 @@
     "server": "nodemon server",
     "data:import": "node data/seeder",
     "data:destroy": "node data/seeder -d",
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "author": "",
   "license": "ISC",
