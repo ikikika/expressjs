@@ -1,13 +1,20 @@
-import { createItem } from "../../controllers/itemController";
-import Item from "../../models/itemModel";
+import { authUser } from "../../controllers/userController";
 
-// mock function
-Item.save = jest.fn();
+// authUser = jest.fn();
 
-describe("createItem", () => {
+jest.mock(authUser);
+
+describe("authUser", () => {
   // check if the createItem function exist
   it("should should be a function", () => {
-    expect(typeof createItem).toBe("function");
+    expect(typeof authUser).toBe("function");
+  });
+
+  it("should log user in and return token", () => {
+    expect(authUser).toBeCalledWith({
+      email: "test1@email.com",
+      password: "123456",
+    });
   });
 
   // check if create method is called inside createItem
