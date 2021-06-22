@@ -25,4 +25,13 @@ describe("TodoController.createTodo", () => {
     // test if TodoModel.create is called in TodoController.createTodo, without actually creating an item in db
     expect(TodoModel.create).toBeCalledWith(newTodo);
   });
+
+  it("should return 201 response code", () => {
+    req.body = newTodo;
+
+    TodoController.createTodo(req, res, next);
+
+    expect(res.statusCode).toBe(201);
+    expect(res._isEndCalled()).toBeTruthy();
+  });
 });
