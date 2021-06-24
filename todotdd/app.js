@@ -2,12 +2,12 @@ const express = require("express");
 const dotenv = require("dotenv");
 const todoRoutes = require("./routes/todo.routes");
 
-const connectDB = require("./config/db");
+const mongodb = require("./config/mongodb.connect");
 
 const app = express();
 dotenv.config();
 
-connectDB();
+mongodb.connect();
 
 app.use(express.json);
 

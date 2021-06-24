@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const connectDB = async () => {
+async function connect() {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI, {
       useUnifiedTopology: true,
@@ -12,6 +12,6 @@ const connectDB = async () => {
     console.log(`Error: ${error.message}`);
     process.exit(1);
   }
-};
+}
 
-module.exports = connectDB;
+module.exports = { connect };
